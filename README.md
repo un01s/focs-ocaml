@@ -40,6 +40,12 @@ $opam exec -- dune exec hello
 Hello, World!
 ```
 
+the [main.ml](./hello/bin/main.ml) is very simple:
+
+```ocaml
+let () = print_endline "Hello, World!"
+```
+
 ## links
 
 * [Univ. Cambridge Foundations of Computer Science](https://www.cl.cam.ac.uk/teaching/2526/FoundsCS/)
