@@ -1,6 +1,6 @@
 # foundations of computer science in ocaml
 
-## [install ocaml](https://ocaml.org/docs/installing-ocaml)
+## 00. [install ocaml](https://ocaml.org/docs/installing-ocaml)
 
 * for macOS, it is simple:
 
@@ -29,6 +29,16 @@ utop # #quit;;
 ```
 
 Use ```#quit;;``` or ```CTRL+D``` to exit UTop.
+
+## 01. hello
+
+```
+$opam exec -- dune init proj hello
+$cd hello
+$opam exec -- dune build
+$opam exec -- dune exec hello
+Hello, World!
+```
 
 ## links
 
