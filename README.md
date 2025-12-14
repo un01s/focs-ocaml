@@ -20,3 +20,5 @@ $utop
 
 * [Univ. Cambridge Foundations of Computer Science](https://www.cl.cam.ac.uk/teaching/2526/FoundsCS/)
 
+* [lecturer's notes](https://jon.recoil.org/blog/2025/11/foundations-of-computer-science.html)
+
