@@ -48,4 +48,5 @@ Hello, World!
 
 * [project Jupyter github](https://github.com/jupyter)
 
+* [book OCaml from very beginning](./book/mlbook.pdf)
 
