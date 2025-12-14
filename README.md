@@ -46,6 +46,10 @@ the [main.ml](./hello/bin/main.ml) is very simple:
 let () = print_endline "Hello, World!"
 ```
 
+## 02. recursion and complexity
+
+check the log files chronically.
+
 ## links
 
 * [Univ. Cambridge Foundations of Computer Science](https://www.cl.cam.ac.uk/teaching/2526/FoundsCS/)
