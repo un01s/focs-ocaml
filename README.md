@@ -30,7 +30,7 @@ utop # #quit;;
 
 Use ```#quit;;``` or ```CTRL+D``` to exit UTop.
 
-## 01. hello
+## 01. [hello](https://ocaml.org/docs/your-first-program)
 
 ```
 $opam exec -- dune init proj hello
