@@ -50,6 +50,25 @@ let () = print_endline "Hello, World!"
 
 check the log files chronically.
 
+```ocaml
+utop # #use "./focs-ocaml/ml/01npower.ml" ;;
+val npower : float -> int -> float = <fun>
+─( 14:29:14 )─< command 14 >─────────────────────────────────────{ counter: 0 }─
+utop # npower 2.0 3 ;;
+- : float = 8.
+```
+
+* ```#use "some.ml"``` in utop or ```ocaml file.ml``` in the shell
+
+```ocaml
+$cat 00hello.ml 
+let () = print_endline "Hello, world!"
+$ocaml 00hello.ml 
+Hello, world!
+```
+
+* another way is ```$chmod +x 01hello.ml && ./01hello.ml```.
+
 ## links
 
 * [Univ. Cambridge Foundations of Computer Science](https://www.cl.cam.ac.uk/teaching/2526/FoundsCS/)
@@ -58,5 +77,7 @@ check the log files chronically.
 
 * [project Jupyter github](https://github.com/jupyter)
 
-* [book OCaml from very beginning](./book/mlbook.pdf)
+* [book: OCaml from very beginning](./book/mlbook.pdf)
+
+* [online book: OCaml from the ground up](https://ocamlbook.org/)
 
