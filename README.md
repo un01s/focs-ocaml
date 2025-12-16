@@ -77,7 +77,9 @@ Hello, world!
 
 * [project Jupyter github](https://github.com/jupyter)
 
-* [book: OCaml from very beginning](./book/mlbook.pdf)
+* [book pdf: OCaml from very beginning](./book/mlbook.pdf)
+
+* [book online: Ocaml from very beginning](https://ocaml-book.com/)
 
 * [online book: OCaml from the ground up](https://ocamlbook.org/)
 
