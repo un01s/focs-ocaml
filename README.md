@@ -69,6 +69,48 @@ Hello, world!
 
 * another way is ```$chmod +x 01hello.ml && ./01hello.ml```.
 
+## 03. lists and polymorphism
+
+a list is a finite sequence of elements. the elements can be any type but all elements must have the same type. the order of the list is important. two primitives for list are ```[]``` and ```::```. ```x::l``` is the list with head x and tail l.
+
+* append ```@``` and ```List.rev list```
+
+tuples are fixed size but heterogeneous and comma as separator instead of semicolon for list.
+
+```ocaml
+utop # List.rev [(1, "one"); (2, "two")] ;;
+- : (int * string) list = [(2, "two"); (1, "one")]
+```
+
+* sum
+
+```ocaml
+utop # let rec sum n =
+  match n with
+    | 0 -> 0
+    | _ -> n + sum (n-1) ;;
+val sum : int -> int = <fun>
+─( 10:38:22 )─< command 1 >──────────────────────────────────────{ counter: 0 }─
+utop # sum 10 ;;
+- : int = 55
+```
+
+* up_to
+
+```ocaml
+utop # let rec up_to m n =
+  if m > n then []
+  else m :: up_to (m+1) n ;;
+val up_to : int -> int -> int list = <fun>
+─( 10:45:15 )─< command 7 >──────────────────────────────────────{ counter: 0 }─
+utop # up_to 2 5 ;;
+- : int list = [2; 3; 4; 5]
+```
+
+## 04. more lists and making changes
+
+## 05. sorting
+
 ## links
 
 * [Univ. Cambridge Foundations of Computer Science](https://www.cl.cam.ac.uk/teaching/2526/FoundsCS/)
