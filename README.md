@@ -107,6 +107,16 @@ utop # up_to 2 5 ;;
 - : int list = [2; 3; 4; 5]
 ```
 
+* nlength
+
+```ocaml
+utop # #use "03nlength.ml" ;;
+val nlength : 'a list -> int = <fun>
+─( 10:50:28 )─< command 4 >──────────────────────────────────────{ counter: 0 }─
+utop # nlength [3; 5; 7] ;;
+- : int = 3
+```
+
 ## 04. more lists and making changes
 
 ## 05. sorting
