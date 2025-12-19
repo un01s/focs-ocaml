@@ -147,6 +147,23 @@ utop # 2::b ;;
 - : int list = [2; 3; 4; 5]
 ```
 
+* take and drop for list
+
+```ocaml
+utop # #use "./ml/04takedrop.ml" ;;
+val take : 'a list * int -> 'a list = <fun>
+val drop : 'a list * int -> 'a list = <fun>
+─( 10:32:03 )─< command 11 >─────────────────────────────────────{ counter: 0 }─
+utop # let a = [1; 2; 3; 4; 5; 6] ;;
+val a : int list = [1; 2; 3; 4; 5; 6]
+─( 10:35:08 )─< command 12 >─────────────────────────────────────{ counter: 0 }─
+utop # let x = take (a, 3) ;;
+val x : int list = [1; 2; 3]
+─( 10:35:32 )─< command 13 >─────────────────────────────────────{ counter: 0 }─
+utop # let y = drop (a, 3) ;;
+val y : int list = [4; 5; 6]
+```
+ 
 ## 05. sorting
 
 ## links
