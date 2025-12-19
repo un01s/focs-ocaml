@@ -119,6 +119,34 @@ utop # nlength [3; 5; 7] ;;
 
 ## 04. more lists and making changes
 
+* flatten
+
+```ocaml
+utop # let rec flatten = function 
+  | [] -> []
+  | l :: ls -> l @ flatten ls ;;
+val flatten : 'a list list -> 'a list = <fun>
+─( 10:20:37 )─< command 1 >──────────────────────────────────────{ counter: 0 }─
+utop # flatten [[1;2]; [3;4]];;
+- : int list = [1; 2; 3; 4]
+```
+
+* list operations
+
+```ocaml
+utop # let a = [2] ;;
+val a : int list = [2]
+─( 10:21:42 )─< command 3 >──────────────────────────────────────{ counter: 0 }─
+utop # let b = [3; 4; 5] ;;
+val b : int list = [3; 4; 5]
+─( 10:23:01 )─< command 4 >──────────────────────────────────────{ counter: 0 }─
+utop # a @ b ;;
+- : int list = [2; 3; 4; 5]
+─( 10:23:17 )─< command 5 >──────────────────────────────────────{ counter: 0 }─
+utop # 2::b ;;
+- : int list = [2; 3; 4; 5]
+```
+
 ## 05. sorting
 
 ## links
