@@ -163,7 +163,70 @@ val x : int list = [1; 2; 3]
 utop # let y = drop (a, 3) ;;
 val y : int list = [4; 5; 6]
 ```
- 
+
+* equality tests is OK for integers, bools, floats, etc. but NOT functions
+
+```ocaml
+utop # let f1 = function _ -> 1.0 ;;
+val f1 : 'a -> float = <fun>
+─( 09:38:26 )─< command 1 >──────────────────────────────────────{ counter: 0 }─
+utop # let f2 = function _ -> 2.0 ;;
+val f2 : 'a -> float = <fun>
+─( 09:38:37 )─< command 2 >──────────────────────────────────────{ counter: 0 }─
+utop # let result = f1 = f2 ;;
+Exception: Invalid_argument "compare: functional value".
+─( 09:38:59 )─< command 3 >──────────────────────────────────────{ counter: 0 }─
+utop # let result = f1 == f2 ;;
+val result : bool = false
+```
+
+* list membership
+
+```ocaml
+utop # let l = [2; 3; 4; 6] ;;
+val l : int list = [2; 3; 4; 6]
+─( 09:42:05 )─< command 6 >──────────────────────────────────────{ counter: 0 }─
+utop # List.mem 3 l ;;
+- : bool = true
+```
+
+```ocaml
+utop # let rec member x l =
+  match l with
+  | [] -> false
+  | h::t ->
+    h = x || member x t ;;
+val member : 'a -> 'a list -> bool = <fun>
+─( 09:47:51 )─< command 9 >──────────────────────────────────────{ counter: 0 }─
+utop # member 3 l ;;
+- : bool = true
+─( 09:48:48 )─< command 10 >─────────────────────────────────────{ counter: 0 }─
+utop # member 7 l ;;
+- : bool = false
+utop # let rec inter xs ys = 
+  match xs, ys with
+  | [], ys -> []
+  | x::xs, ys ->
+    if member x ys then
+      x :: inter xs ys
+    else
+      inter xs ys ;;
+val inter : 'a list -> 'a list -> 'a list = <fun>
+─( 09:49:08 )─< command 12 >─────────────────────────────────────{ counter: 0 }─
+utop # inter [2;4;6;8;10;12;14;16] [3;6;9;12;15;18] ;;
+- : int list = [6; 12]
+```
+
+* zip and unzip
+
+```ocaml
+utop # #use "04zip.ml" ;;
+val zip : 'a list -> 'b list -> ('a * 'b) list = <fun>
+─( 09:53:24 )─< command 1 >──────────────────────────────────────{ counter: 0 }─
+utop # let x = zip [1;2;3;4] ['a';'b';'c'] ;;
+val x : (int * char) list = [(1, 'a'); (2, 'b'); (3, 'c')]
+```
+
 ## 05. sorting
 
 ## links
