@@ -227,6 +227,19 @@ utop # let x = zip [1;2;3;4] ['a';'b';'c'] ;;
 val x : (int * char) list = [(1, 'a'); (2, 'b'); (3, 'c')]
 ```
 
+* change
+
+```ocaml
+utop # #use "04change.ml" ;;
+val change : int list -> int -> int list -> int list list -> int list list =
+  <fun>
+utop # change [5;3;2] 6 [] [] ;;
+- : int list list = [[3; 3]; [2; 2; 2]]
+─( 10:00:04 )─< command 7 >──────────────────────────────────────{ counter: 0 }─
+utop # change [5;2] 16 [] [] ;;
+- : int list list = [[2; 2; 2; 5; 5]; [2; 2; 2; 2; 2; 2; 2; 2]]
+```
+
 ## 05. sorting
 
 ## links
